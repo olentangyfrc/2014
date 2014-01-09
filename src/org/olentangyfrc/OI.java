@@ -11,9 +11,6 @@ import org.olentangyfrc.RobotMap;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-    Joystick armJoystick = new Joystick(RobotMap.ARM_JOYSTICK);
-    Button armLiftButton = new JoystickButton(armJoystick, RobotMap.ARM_LIFT_BUTTON),
-           armLowerButton = new JoystickButton(armJoystick, RobotMap.ARM_LOWER_BUTTON);
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -45,5 +42,8 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+     Joystick armJoystick = new Joystick(RobotMap.ARM_JOYSTICK);
+    Button armLiftButton = new JoystickButton(armJoystick, RobotMap.ARM_LIFT_BUTTON),
+           armLowerButton = new JoystickButton(armJoystick, RobotMap.ARM_LOWER_BUTTON);
 }
 
