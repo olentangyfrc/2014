@@ -9,7 +9,14 @@ package org.olentangyfrc;
 public class RobotMap {
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
-    // public static final int leftMotor = 1;
+    public static final int 
+            ARM_MOTOR = 5,
+            ROLLER_MOTOR = 6,
+            ARM_JOYSTICK = 3,
+            ARM_LIFT_BUTTON = 4,
+            ARM_LOWER_BUTTON = 5;
+            
+            
     // public static final int rightMotor = 2;
     
     // If you are using multiple modules, make sure to define both the port
