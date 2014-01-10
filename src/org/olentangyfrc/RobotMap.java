@@ -7,6 +7,9 @@ package org.olentangyfrc;
  * floating around.
  */
 public class RobotMap {
+	
+	public static final int SHOOTING_PISTON = 5; // made this up we need a real value
+	
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static final int leftMotor = 1;

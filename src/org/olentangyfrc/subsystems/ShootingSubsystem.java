@@ -1,7 +1,9 @@
 
 package org.olentangyfrc.subsystems;
 
+import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.olentangyfrc.RobotMap;
 
 /**
  * Handles the firing mechanism.
