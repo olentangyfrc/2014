@@ -8,17 +8,16 @@ import org.olentangyfrc.RobotMap;
 /**
  *
  */
-public class ArmSubsystem extends Subsystem {
+public class Arm extends Subsystem {
     
-    Victor armMotor,
-           rollerMotor;
+    Victor armMotor;
+    
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     
-    public ArmSubsystem() {
+    public Arm() {
         super("ArmSubsystem");
         armMotor = new Victor(RobotMap.ARM_MOTOR);
-        rollerMotor = new Victor(RobotMap.ROLLER_MOTOR);
     }
     
     public void initDefaultCommand() {
@@ -26,24 +25,16 @@ public class ArmSubsystem extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void liftArm() {
+    public void lift() {
         armMotor.set(.8);
     }
     
-    public void lowerArm() {
+    public void lower() {
         armMotor.set(-.8);
     }
     
-    public void stopArm() {
+    public void stop() {
         armMotor.set(0);
-    }
-    
-    public void setRollerSpeed(double speed){
-        rollerMotor.set(speed);
-    }
-    
-    public void stopRoller(){
-        rollerMotor.set(0);
     }
     
 }
