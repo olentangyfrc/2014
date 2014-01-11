@@ -5,13 +5,12 @@ package org.olentangyfrc.commands;
  *
  * @author bradmiller
  */
+public class RaiseArm extends CommandBase {
 
-public class RotateRoller extends CommandBase {
-
-    public RotateRoller() {
+    public RaiseArm() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(roller);
+        requires(arm);
     }
 
     // Called just before this Command runs the first time
@@ -20,7 +19,7 @@ public class RotateRoller extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        roller.setSpeed(oi.getRollerSpeed());
+        arm.lift();
     }
 
     // Make this return true when this Command no longer needs to run execute()

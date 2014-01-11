@@ -4,6 +4,7 @@ package org.olentangyfrc;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.olentangyfrc.commands.*;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -45,6 +46,13 @@ public class OI {
      Joystick armJoystick = new Joystick(RobotMap.ARM_JOYSTICK);
      Button armLiftButton = new JoystickButton(armJoystick, RobotMap.ARM_LIFT_BUTTON),
            armLowerButton = new JoystickButton(armJoystick, RobotMap.ARM_LOWER_BUTTON);
+     
+     public OI() {
+         RaiseArm raisearm = new RaiseArm();
+         LowerArm lowerarm = new LowerArm();
+         armLiftButton.whenPressed(raisearm);
+         armLowerButton.whenPressed(lowerarm);
+     }
      
      //This code filters out joystick chatter
      

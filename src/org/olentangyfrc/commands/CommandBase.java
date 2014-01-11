@@ -3,7 +3,7 @@ package org.olentangyfrc.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.olentangyfrc.OI;
-import org.olentangyfrc.subsystems.Arm;
+import org.olentangyfrc.subsystems.*;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -15,7 +15,8 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     // Create a single static instance of all of your subsystems
-    public static Arm exampleSubsystem = new Arm();
+    public static Arm arm = new Arm();
+    public static Roller roller = new Roller();
 
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
@@ -24,9 +25,8 @@ public abstract class CommandBase extends Command {
         // yet. Thus, their requires() statements may grab null pointers. Bad
         // news. Don't move it.
         oi = new OI();
-
         // Show what command your subsystem is running on the SmartDashboard
-        SmartDashboard.putData(exampleSubsystem);
+        SmartDashboard.putData(arm);
     }
 
     public CommandBase(String name) {

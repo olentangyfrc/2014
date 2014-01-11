@@ -19,8 +19,8 @@ public class RobotMap {
             ARM_MOTOR = 5,
             ROLLER_MOTOR = 6,
             ARM_JOYSTICK = 3,
-            ARM_LIFT_BUTTON = 4,
-            ARM_LOWER_BUTTON = 5;
+            ARM_LIFT_BUTTON = 3,
+            ARM_LOWER_BUTTON = 2;
         public static final double
             JOYSTICK_FILTER = .08;
 }
