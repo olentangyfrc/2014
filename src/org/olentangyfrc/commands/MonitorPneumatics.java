@@ -1,6 +1,7 @@
 
 package org.olentangyfrc.commands;
 
+import org.olentangyfrc.commands.CommandBase;
 /**
  *
  * @author bradmiller
@@ -11,6 +12,7 @@ public class MonitorPneumatics extends CommandBase {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         
+        requires(pneumaticsmonitor);
     }
 
     // Called just before this Command runs the first time
@@ -19,6 +21,11 @@ public class MonitorPneumatics extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        if (pneumaticsmonitor.getPressureVoltage() < 4) {
+            pneumaticsmonitor.startCompresssor();
+        }else{
+            pneumaticsmonitor.stopCompressor();
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()

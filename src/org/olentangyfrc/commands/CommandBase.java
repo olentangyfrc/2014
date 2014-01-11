@@ -3,8 +3,7 @@ package org.olentangyfrc.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.olentangyfrc.OI;
-import org.olentangyfrc.subsystems.ExampleSubsystem;
-import org.olentangyfrc.subsystems.ShootingSubsystem;
+import org.olentangyfrc.subsystems.*;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -19,7 +18,7 @@ public abstract class CommandBase extends Command {
 	public static OI oi;
 	// Create a single static instance of all of your subsystems
 	public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-	
+	public static PneumaticsMonitor pneumaticsmonitor = new PneumaticsMonitor();
 	public static ShootingSubsystem shootingSubsystem = new ShootingSubsystem();
 
 	public static void init() {
