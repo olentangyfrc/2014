@@ -15,6 +15,10 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static final int rangefinderPort = 1;
     // public static final int rangefinderModule = 1;
+    
+        public static final boolean
+                // set to true to change hammer speed with joystick
+                SHOOT_AT_A_VARIABLE_SPEED = false;
         public static final int 
                 BASH_MOTOR = 9,
                 PRIMING_LIMIT = 1,

@@ -47,7 +47,8 @@ public class OI {
      Button kickButton = new JoystickButton(variableSpeedJoystick , RobotMap.KICK_BUTTON);
      
      public OI() {
-
+         kickButton.whenPressed(new Shoot());
+         kickButton.whenReleased(new PrimeShooter());
      }
      
      //This code filters out joystick chatter
