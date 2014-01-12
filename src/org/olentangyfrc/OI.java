@@ -43,15 +43,11 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
     // This code declares the joysticks and buttons
     
-     Joystick armJoystick = new Joystick(RobotMap.ARM_JOYSTICK);
-     Button armLiftButton = new JoystickButton(armJoystick, RobotMap.ARM_LIFT_BUTTON),
-           armLowerButton = new JoystickButton(armJoystick, RobotMap.ARM_LOWER_BUTTON);
+     Joystick variableSpeedJoystick = new Joystick(RobotMap.VARIABLE_SPEED_JOYSTICK);
+     Button kickButton = new JoystickButton(variableSpeedJoystick , RobotMap.KICK_BUTTON);
      
      public OI() {
-         RaiseArm raisearm = new RaiseArm();
-         LowerArm lowerarm = new LowerArm();
-         armLiftButton.whenPressed(raisearm);
-         armLowerButton.whenPressed(lowerarm);
+
      }
      
      //This code filters out joystick chatter
@@ -63,8 +59,8 @@ public class OI {
         return value;
      }
      
-     public double getRollerSpeed(){
-         return joysticFilter(armJoystick.getY());
+     public double getVariableSpeed(){
+         return joysticFilter(variableSpeedJoystick .getY());
      }
 }
 

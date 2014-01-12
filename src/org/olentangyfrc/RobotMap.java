@@ -16,11 +16,11 @@ public class RobotMap {
     // public static final int rangefinderPort = 1;
     // public static final int rangefinderModule = 1;
         public static final int 
-            ARM_MOTOR = 5,
-            ROLLER_MOTOR = 6,
-            ARM_JOYSTICK = 3,
-            ARM_LIFT_BUTTON = 3,
-            ARM_LOWER_BUTTON = 2;
+                BASH_MOTOR = 9,
+                PRIMING_LIMIT = 1,
+                SHOOTING_LIMIT = 2,
+                KICK_BUTTON = 5,
+                VARIABLE_SPEED_JOYSTICK = 3;
         public static final double
-            JOYSTICK_FILTER = .08;
+                JOYSTICK_FILTER = .08;
 }
