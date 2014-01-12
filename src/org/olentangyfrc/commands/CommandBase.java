@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package org.olentangyfrc.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -5,35 +9,42 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.olentangyfrc.OI;
 import org.olentangyfrc.subsystems.*;
 
+
 /**
- * The base for all commands. All atomic commands should subclass CommandBase.
- * CommandBase stores creates and stores each control system. To access a
- * subsystem elsewhere in your code in your code use CommandBase.exampleSubsystem
- * @author Author
+ * <p>The CommandBase class is automatically generated when the project is created.
+ * However, whenever you create a new subsystem, you must create a public static
+ * reference to it in the CommandBase class. All commands (except for
+ * CommandGroups) should be subclasses of CommandBase.</p>
+ * 
+ * <p>Recommended next step: {@link ClawDoNothing}</p>
+ * 
+ * @author Alex Henning
  */
 public abstract class CommandBase extends Command {
-
+    // CommandBase holds a static instance of OI
     public static OI oi;
-    // Create a single static instance of all of your subsystems
-    public static Arm arm = new Arm();
-    public static Roller roller = new Roller();
-
+    
+    // Instances of each subsystem
+    
+    public static ShootingSubsystem shootingSubsystem = new ShootingSubsystem();
+    
+    /**
+     * Call this command to properly finish initializing the CommandBase.
+     * This call is automatically included in the default template.
+     */
     public static void init() {
-        // This MUST be here. If the OI creates Commands (which it very likely
-        // will), constructing it during the construction of CommandBase (from
-        // which commands extend), subsystems are not guaranteed to be
-        // yet. Thus, their requires() statements may grab null pointers. Bad
-        // news. Don't move it.
         oi = new OI();
-        // Show what command your subsystem is running on the SmartDashboard
-        SmartDashboard.putData(arm);
+        
+        // Optional: Logs the currently running command for each subsystem in
+        //           the SmartDashboard. This can be useful for debugging.
+        SmartDashboard.putData(shootingSubsystem);
     }
-
-    public CommandBase(String name) {
-        super(name);
+    
+    // Automatically created constructors.
+    public CommandBase(String name){
+        super(name); 
     }
-
     public CommandBase() {
-        super();
+        super(); 
     }
 }
