@@ -6,9 +6,9 @@ import org.olentangyfrc.RobotMap;
  *
  * @author Bindernews
  */
-public class Shoot extends CommandBase {
-	
-	public Shoot() {
+public class PrimeAndShoot extends CommandBase {
+	public int shootingSpeed = -1;
+	public PrimeAndShoot() {
 		requires(shootingSubsystem);
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
@@ -20,11 +20,13 @@ public class Shoot extends CommandBase {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-            if (RobotMap.SHOOT_AT_A_VARIABLE_SPEED) {
-                shootingSubsystem.setSpeed(oi.getVariableSpeed());
-            } else {
-                shootingSubsystem.setSpeed(1);
+            if (shootingSubsystem.topPosition()) {
+                shootingSpeed++;
             }
+            if (shootingSubsystem.hasShot()){
+                shootingSpeed=0;
+            }
+            shootingSubsystem.setSpeed(shootingSpeed);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
