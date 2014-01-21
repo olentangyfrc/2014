@@ -18,9 +18,10 @@ public class RobotMap {
         public static final int 
             ARM_MOTOR = 5,
             ROLLER_MOTOR = 6,
-            ARM_JOYSTICK = 3,
+            ARM_JOYSTICK = 1,
             ARM_LIFT_BUTTON = 3,
             ARM_LOWER_BUTTON = 2;
         public static final double
+            ARM_SPEED = .5,
             JOYSTICK_FILTER = .08;
 }

@@ -48,10 +48,10 @@ public class OI {
            armLowerButton = new JoystickButton(armJoystick, RobotMap.ARM_LOWER_BUTTON);
      
      public OI() {
-         RaiseArm raisearm = new RaiseArm();
-         LowerArm lowerarm = new LowerArm();
-         armLiftButton.whenPressed(raisearm);
-         armLowerButton.whenPressed(lowerarm);
+
+         armLiftButton.whenPressed(new RaiseArm());
+         armLiftButton.whenReleased(new StopArm());
+         armLowerButton.whenPressed(new LowerArm());
      }
      
      //This code filters out joystick chatter
