@@ -16,4 +16,19 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static final int rangefinderPort = 1;
     // public static final int rangefinderModule = 1;
+	
+	public static final int HAMMER_MOTOR_1 = 5,
+			HAMMER_MOTOR_2 = 6;
+	
+	public static final int STELLARUS_PORT = 0,
+			BUTTON_WHITE_DOWN = 10,
+			BUTTON_WHITE_UP = 9,
+			BUTTON_BLUE_DOWN =  8,
+			BUTTON_BLUE_UP = 7,
+			BUTTON_GREEN_DOWN = 6,
+			BUTTON_GREEN_UP = 5,
+			BUTTON_YELLOW_DOWN = 4,
+			BUTTON_YELLOW_UP = 3,   // this is INVERTED!!! Pushing the button causes it to turn off. Code wisely.
+			BUTTON_RED_DOWN = 2,
+			BUTTON_RED_UP = 1;
 }
