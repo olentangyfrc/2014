@@ -18,10 +18,7 @@ public abstract class CommandBase extends Command {
     
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static HammerSubsystem hammerSubsystem = new HammerSubsystem();
-    public static UpperRight upperRight = new UpperRight();
-    public static UpperLeft upperLeft = new UpperLeft();
-    public static LowerRight lowerRight = new LowerRight();
-    public static LowerLeft lowerLeft = new LowerLeft();
+	public static DriveTrain driveTrain = new DriveTrain();
     
 
     public static void init() {
