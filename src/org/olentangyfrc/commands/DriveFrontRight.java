@@ -1,16 +1,19 @@
-
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package org.olentangyfrc.commands;
 
 /**
- * Primes the shooter for shooting. This will probably 
- * @author Bindernews
+ *
+ * @author alex
  */
-public class PrimeShooter extends CommandBase {
+public class DriveFrontRight extends CommandBase {
 	
-	public PrimeShooter() {
-		requires(shootingSubsystem);
+	public DriveFrontRight() {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
+		requires(CommandBase.upperRight);
 	}
 
 	// Called just before this Command runs the first time
@@ -18,7 +21,8 @@ public class PrimeShooter extends CommandBase {
 	}
 
 	// Called repeatedly when this Command is scheduled to run
-	protected void execute() {
+	protected void execute() {	
+		upperRight.Move(oi.filter(oi.joystickSolo.getX() / 2) - oi.filter(- oi.joystickSolo.getY()) - oi.filter( - oi.joystickTwo.getX()));
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
