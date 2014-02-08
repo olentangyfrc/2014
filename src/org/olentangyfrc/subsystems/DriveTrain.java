@@ -29,19 +29,19 @@ public class DriveTrain extends Subsystem {
 		upperLeft  = new Victor(RobotMap.TOP_LEFT_MOTOR);
 	}
 	
-	public void setLowerLeftSpeed(double spd) {
+	public void setLowerLeft(double spd) {
 		lowerLeft.set(spd);
 	}
 	
-	public void setLowerRightSpeed(double spd) {
+	public void setLowerRight(double spd) {
 		lowerRight.set(spd);
 	}
 	
-	public void setUpperRightSpeed(double spd) {
+	public void setUpperRight(double spd) {
 		upperRight.set(spd);
 	}
 	
-	public void setUpperLeftSpeed(double spd) {
+	public void setUpperLeft(double spd) {
 		upperLeft.set(spd);
 	}
 	

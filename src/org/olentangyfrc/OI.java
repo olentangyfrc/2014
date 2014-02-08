@@ -2,6 +2,7 @@ package org.olentangyfrc;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.olentangyfrc.commands.SetWheelSpeed;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -30,7 +31,6 @@ public class OI {
 			btnWarpSpeed = new JoystickButton(joystickSolo, 1),
 			btnRollerForwards = new JoystickButton(stellarus, RobotMap.BUTTON_WHITE_UP),
 			btnRollerBackwards = new JoystickButton(stellarus, RobotMap.BUTTON_WHITE_DOWN),
-			
 			btnArmUp = new JoystickButton(stellarus, RobotMap.BUTTON_BLUE_UP),
 			btnArmDown = new JoystickButton(stellarus, RobotMap.BUTTON_BLUE_DOWN),
 			btnArmCatch = new JoystickButton(stellarus, RobotMap.BUTTON_RED_UP),
@@ -39,13 +39,13 @@ public class OI {
 			btnTrussShot = new JoystickButton(stellarus, RobotMap.BUTTON_RED_DOWN);
 
 	public OI() {
-		btnRollerForwards.whenPressed(null);
-		btnRollerBackwards.whenPressed(null);
-		btnArmUp.whenPressed(null);
-		btnArmDown.whenPressed(null);
+		btnRollerForwards.whenPressed(new SetWheelSpeed(1, true));
+		btnRollerBackwards.whenPressed(new SetWheelSpeed(-1, true));
+		btnArmUp.whenPressed(new SetWheelSpeed(1, true));
+		btnArmDown.whenPressed(new SetWheelSpeed(-1, true));
 		btnArmCatch.whenPressed(null);
-		btnPass.whenReleased(null); // THIS IS INTENTIONAL
-		btnGoal.whenPressed(null);
+		btnPass.whenReleased(new SetWheelSpeed(1,true)); // THIS IS INTENTIONAL
+		btnGoal.whenPressed(new SetWheelSpeed(-1,true));
 		btnTrussShot.whenPressed(null);
 	}
 }

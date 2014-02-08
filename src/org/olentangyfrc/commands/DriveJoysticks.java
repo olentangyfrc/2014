@@ -26,10 +26,10 @@ public class DriveJoysticks extends CommandBase {
 		double joyTwoX = oi.filter(oi.joystickTwo.getX());
 		double joyTwoNX = oi.filter( - oi.joystickTwo.getX());
 		
-		driveTrain.setLowerLeftSpeed(joySoloXD2 + joySoloNY - joyTwoX);
-		driveTrain.setLowerRightSpeed(joySoloXD2 - joySoloNY + joyTwoNX);
-		driveTrain.setUpperRightSpeed(joySoloXD2 - joySoloNY - joyTwoNX);
-		driveTrain.setUpperLeftSpeed(joySoloXD2 + joySoloNY + joyTwoX);
+		driveTrain.setLowerLeft(joySoloXD2 + joySoloNY - joyTwoX);
+		driveTrain.setLowerRight(joySoloXD2 - joySoloNY + joyTwoNX);
+		driveTrain.setUpperRight(joySoloXD2 - joySoloNY - joyTwoNX);
+		driveTrain.setUpperLeft(joySoloXD2 + joySoloNY + joyTwoX);
 		
 		// lowerLeft.Move(oi.filter(oi.joystickSolo.getX()/2) + oi.filter( - oi.joystickSolo.getY()) - oi.filter(oi.joystickTwo.getX()));
 		// lowerRight.Move(oi.filter(oi.joystickSolo.getX()/ 2) - oi.filter(- oi.joystickSolo.getY()) + oi.filter(- oi.joystickTwo.getX()));
