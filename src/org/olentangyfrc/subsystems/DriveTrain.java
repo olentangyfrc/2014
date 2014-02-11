@@ -52,6 +52,26 @@ public class DriveTrain extends Subsystem {
 		lowerRight.set(spd);
 	}
 	
+	public void setFrontSpeed(double spd) {
+		upperLeft.set(spd);
+		upperRight.set(spd);
+	}
+	
+	public void setBackSpeed(double spd) {
+		lowerLeft.set(spd);
+		lowerRight.set(spd);
+	}
+	
+	public void setLeftSpeed(double spd) {
+		upperLeft.set(spd);
+		lowerLeft.set(spd);
+	}
+	
+	public void setRightSpeed(double spd) {
+		upperRight.set(spd);
+		lowerRight.set(spd);
+	}
+	
 	public void stopLowerLeft() {
 		lowerLeft.stopMotor();
 	}
